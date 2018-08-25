@@ -76,7 +76,9 @@ public class ProductController {
 
         if (productAdded == null)
             return ResponseEntity.noContent().build();
- 
+        
+        if(productAdded.getPrix() == 0) throw new ProduitGratuitException("Le prix de vente d'un produit doit etre supérieur ou égale à 1");
+
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
                 .path("/{id}")
