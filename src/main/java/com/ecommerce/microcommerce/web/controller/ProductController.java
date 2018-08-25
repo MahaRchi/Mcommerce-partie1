@@ -120,5 +120,13 @@ public class ProductController {
     	
     	return mapProduits;
     }
+    
+    @GetMapping(value = "/ProduitByNameAsc")
+    public List<Product>  trierProduitsParOrdreAlphabetique() {
+
+        return productDao.OrderByNomAsc();
+    }
+    
+    
 
 }
