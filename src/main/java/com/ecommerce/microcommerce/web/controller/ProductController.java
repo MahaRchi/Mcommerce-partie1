@@ -110,15 +110,15 @@ public class ProductController {
 
     	Iterable<Product> produits = productDao.findAll();
     	
-    	Map produitss = new HashMap<>();
+    	Map mapProduits = new HashMap<>();
     	
     	for(Product produit : produits)
     	{
     		int marge = produit.getPrix() - produit.getPrixAchat();
-    		produitss.put(produit, marge);
+    		mapProduits.put(produit, marge);
     	}
     	
-    	return produitss;
+    	return mapProduits;
     }
 
 }
